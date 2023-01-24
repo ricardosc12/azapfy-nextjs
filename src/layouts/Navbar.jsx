@@ -66,7 +66,7 @@ export default function Navbar({children}) {
                                 <Link  key={item.name}
                                 href={item.href}
                                 className={classNames(
-                                item.current
+                                item.href==router.pathname
                                     ? 'bg-gray-900 text-white'
                                     : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                                 'px-3 py-2 rounded-md text-sm font-medium'
