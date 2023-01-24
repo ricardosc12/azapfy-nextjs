@@ -49,8 +49,8 @@ const products = [
                     <Image
                         src={product.imageSrc}
                         alt={product.imageAlt}
-                        width={80}
-                        height={80}
+                        width={200}
+                        height={200}
                         className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                     />
                     </div>
