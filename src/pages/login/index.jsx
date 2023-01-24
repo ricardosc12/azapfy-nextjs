@@ -1,6 +1,7 @@
 import style from '@/styles/Home.module.css'
 import Auth from '@/storage/Auth'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 
 import { LockClosedIcon } from '@heroicons/react/20/solid'
 
@@ -11,10 +12,12 @@ export default function Login() {
         <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
             <div className="w-full max-w-md space-y-8">
             <div>
-                <img
+                <Image
                 className="mx-auto h-12 w-auto"
                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                 alt="Your Company"
+                width={120}
+                height={120}
                 />
                 <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
                 Sign in to your account

@@ -3,6 +3,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 
 const user = {
   name: 'Tom Cook',
@@ -50,10 +51,12 @@ export default function Navbar({children}) {
                     <div className="flex h-16 items-center justify-between">
                     <div className="flex items-center">
                         <div className="flex-shrink-0">
-                        <img
+                        <Image
                             className="h-8 w-8"
                             src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                             alt="Your Company"
+                            width={80}
+                            height={80}
                         />
                         </div>
                         <div className="hidden md:block">
@@ -87,7 +90,7 @@ export default function Navbar({children}) {
                             <div>
                             <Menu.Button className="flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                                 <span className="sr-only">Open user menu</span>
-                                <img className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" />
+                                <Image className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" width={80} height={80}/>
                             </Menu.Button>
                             </div>
                             <Transition
@@ -154,7 +157,7 @@ export default function Navbar({children}) {
                     <div className="border-t border-gray-700 pt-4 pb-3">
                     <div className="flex items-center px-5">
                         <div className="flex-shrink-0">
-                        <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
+                        <Image className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" width={100} height={100}/>
                         </div>
                         <div className="ml-3">
                         <div className="text-base font-medium leading-none text-white">{user.name}</div>
