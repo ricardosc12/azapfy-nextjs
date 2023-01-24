@@ -4,6 +4,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
+import Icon from "@pub/favicon.ico"
 
 const user = {
   name: 'Tom Cook',
@@ -53,7 +54,7 @@ export default function Navbar({children}) {
                         <div className="flex-shrink-0">
                         <Image
                             className="h-8 w-8"
-                            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                            src={Icon}
                             alt="Your Company"
                             width={80}
                             height={80}
