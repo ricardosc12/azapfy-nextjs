@@ -1,6 +1,5 @@
 import Chart from "@/components/molecules/Chart"
 import Widget from "@/components/molecules/Widget"
-import { useEffect } from "react"
 
 export default function Dash({charts,widgets}){
 

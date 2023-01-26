@@ -1,13 +1,7 @@
 import { 
-    CRow, CCol, CWidgetStatsA, CDropdown,
-    CDropdownToggle, CDropdownMenu, CDropdownItem,CWidgetStatsB
+    CRow, CCol, CWidgetStatsB
 } from "@coreui/react"
 
-import { CIcon } from '@coreui/icons-react';
-import { cilArrowTop,
-    cilOptions } from '@coreui/icons';
-
-import { CChartLine,CChartBar } from "@coreui/react-chartjs";
 
 export default function Widget({widgets}){
     

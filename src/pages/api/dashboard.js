@@ -4,6 +4,7 @@ function delay(time=2000) {
 
 export default async function handler(req, res) {
     await delay()
+    
     const charts = [
         {
             labels:[
