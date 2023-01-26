@@ -1,8 +1,24 @@
 import Chart from "@/components/molecules/Chart"
 import Widget from "@/components/molecules/Widget"
 import { server } from "@/config"
+import useSWR from 'swr'
 
-export default function Dash({charts,widgets}){
+const fetcher = async ([url,data]) => await fetch(url,{
+    method:'POST'
+}).then((res) => res.json())
+
+const useDash = () => {
+    const { data, error, isLoading } = useSWR([`${server}/api/dashboard`], fetcher)
+    return {
+        widgets: data?.widgets,
+        charts: data?.charts
+    }
+
+}
+
+export default function Dash(){
+
+    const { widgets, charts } = useDash([`${server}/api/dashboard`], fetcher)
 
     return (
         <div>
@@ -16,18 +32,5 @@ export default function Dash({charts,widgets}){
     )
 
 }
-
-export async function getServerSideProps(context) {
-
-    const res = await fetch(`${server}/api/dashboard`,{
-        method:'POST'
-    })
-    const data = await res.json()
-    
-    return {
-        props: data
-    }
-  }
-
 
 Dash.nav=true
