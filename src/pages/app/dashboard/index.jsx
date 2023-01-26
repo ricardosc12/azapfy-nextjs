@@ -1,5 +1,6 @@
 import Chart from "@/components/molecules/Chart"
 import Widget from "@/components/molecules/Widget"
+import { server } from "@/config"
 
 export default function Dash({charts,widgets}){
 
@@ -18,7 +19,7 @@ export default function Dash({charts,widgets}){
 
 export async function getServerSideProps(context) {
 
-    const res = await fetch('http://localhost:3000/api/dashboard',{
+    const res = await fetch(`${server}/api/dashboard`,{
         method:'POST'
     })
     const data = await res.json()
