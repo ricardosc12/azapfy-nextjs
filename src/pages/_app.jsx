@@ -1,4 +1,5 @@
 import '@/styles/globals.css'
+import '@coreui/coreui/dist/css/coreui.min.css'
 import Navbar from '@/layouts/Navbar'
 import Head from 'next/head'
 

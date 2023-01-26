@@ -10,6 +10,11 @@
     "prod": "next build & next start"
   },
   "dependencies": {
+    "@coreui/coreui": "^4.2.6",
+    "@coreui/icons": "^2.1.0",
+    "@coreui/icons-react": "^2.1.0",
+    "@coreui/react": "^4.5.2",
+    "@coreui/react-chartjs": "^2.1.2",
     "@headlessui/react": "^1.7.7",
     "@heroicons/react": "^2.0.13",
     "@next/font": "13.1.5",

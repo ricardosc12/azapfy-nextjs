@@ -1,6 +1,11 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@coreui/coreui': ^4.2.6
+  '@coreui/icons': ^2.1.0
+  '@coreui/icons-react': ^2.1.0
+  '@coreui/react': ^4.5.2
+  '@coreui/react-chartjs': ^2.1.2
   '@headlessui/react': ^1.7.7
   '@heroicons/react': ^2.0.13
   '@next/font': 13.1.5
@@ -18,6 +23,11 @@ specifiers:
   zustand: ^4.3.2
 
 dependencies:
+  '@coreui/coreui': 4.2.6_postcss@8.4.21
+  '@coreui/icons': 2.1.0
+  '@coreui/icons-react': 2.1.0_biqbaboplfbrettd7655fr4n2y
+  '@coreui/react': 4.5.2_biqbaboplfbrettd7655fr4n2y
+  '@coreui/react-chartjs': 2.1.2_biqbaboplfbrettd7655fr4n2y
   '@headlessui/react': 1.7.7_biqbaboplfbrettd7655fr4n2y
   '@heroicons/react': 2.0.13_react@18.2.0
   '@next/font': 13.1.5
@@ -43,6 +53,69 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.11
+    dev: false
+
+  /@coreui/chartjs/3.0.0:
+    resolution: {integrity: sha512-udbvSxanTNltv94lqTMW8bLRXTtzk9G2SrmFdM/7HH+JSaLX2wdQpZ4VIJhyOCRGLCSKHktl29BnW1/uXQecAg==}
+    dependencies:
+      '@coreui/coreui': 4.0.0
+      chart.js: 3.9.1
+    transitivePeerDependencies:
+      - '@popperjs/core'
+    dev: false
+
+  /@coreui/coreui/4.0.0:
+    resolution: {integrity: sha512-8vH6fJrmvCR/Oy5v0E+/1AL3Ygb4jhQ7NXK2fMYWJyK13BePDm9muB3y6S0IdqkpBwjY3hHVwHyt2lJqJdesmQ==}
+    peerDependencies:
+      '@popperjs/core': ^2.9.2
+    dev: false
+
+  /@coreui/coreui/4.2.6_postcss@8.4.21:
+    resolution: {integrity: sha512-h9j1BVnaDi9vSr1t0H8NL3hlDD4lU9kIdGLXn7g9k5iaFq5EDlRDcSBDer6lR2O4sIEl7W7YqTlevLxFC+1cIA==}
+    peerDependencies:
+      '@popperjs/core': ^2.11.6
+    dependencies:
+      postcss-combine-duplicated-selectors: 10.0.3_postcss@8.4.21
+    transitivePeerDependencies:
+      - postcss
+    dev: false
+
+  /@coreui/icons-react/2.1.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-x7qhVB6IJFbGBh/An3QZHtuUISM+TBgc4x3ecrBel+wMdJm4Qpmg9Km0GFfOkP6/fNOfy2fLb2wZ2bbe5+sgQA==}
+    peerDependencies:
+      react: '>=17'
+      react-dom: '>=17'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /@coreui/icons/2.1.0:
+    resolution: {integrity: sha512-3yY9J0088TSY403jwJeP5YERH3RLOvxdhOa4VIQsGOX4fuQZiyVUM+vwlzyCSpgAv9NwKPkCor+gc+JJaYf0TA==}
+    dev: false
+
+  /@coreui/react-chartjs/2.1.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-3ypVkJbvm+dXNsJAsN6q6alE+cikiSl0QXOjCJMq5zEGx15yg59UqdZa7o6zB2wsPO7v89JMjywDndJ6YIZ3OQ==}
+    peerDependencies:
+      react: '>=17'
+      react-dom: '>=17'
+    dependencies:
+      '@coreui/chartjs': 3.0.0
+      chart.js: 3.9.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    transitivePeerDependencies:
+      - '@popperjs/core'
+    dev: false
+
+  /@coreui/react/4.5.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-6F+WCZZ+29NVWJ/b44zzwQnziXYuWwKnV3ofsSgw41qVLjhBe6plP3NhuQH9grhZW+BoV1YTU4rMsc8sJ1UESQ==}
+    peerDependencies:
+      react: '>=17'
+      react-dom: '>=17'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /@eslint/eslintrc/1.4.1:
@@ -596,6 +669,10 @@ packages:
       sentence-case: 3.0.4
       snake-case: 3.0.4
       tslib: 2.4.1
+    dev: false
+
+  /chart.js/3.9.1:
+    resolution: {integrity: sha512-Ro2JbLmvg83gXF5F4sniaQ+lTbSv18E+TIf2cOeiH1Iqd2PGFOtem+DUufMZsCJwFE7ywPOpfXFBwRTGq7dh6w==}
     dev: false
 
   /chokidar/3.5.3:
@@ -1983,6 +2060,16 @@ packages:
   /pify/2.3.0:
     resolution: {integrity: sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==}
     engines: {node: '>=0.10.0'}
+
+  /postcss-combine-duplicated-selectors/10.0.3_postcss@8.4.21:
+    resolution: {integrity: sha512-IP0BmwFloCskv7DV7xqvzDXqMHpwdczJa6ZvIW8abgHdcIHs9mCJX2ltFhu3EwA51ozp13DByng30+Ke+eIExA==}
+    engines: {node: ^10.0.0 || ^12.0.0 || >=14.0.0}
+    peerDependencies:
+      postcss: ^8.1.0
+    dependencies:
+      postcss: 8.4.21
+      postcss-selector-parser: 6.0.11
+    dev: false
 
   /postcss-import/14.1.0_postcss@8.4.21:
     resolution: {integrity: sha512-flwI+Vgm4SElObFVPpTIT7SU7R3qk2L7PyduMcokiaVKuWv9d/U+Gm/QAd8NDLuykTWTkcrjOeD2Pp1rMeBTGw==}

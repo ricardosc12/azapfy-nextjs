@@ -14,9 +14,11 @@ const user = {
 }
 
 const navigation = [
-  { name: 'Information', href: '/app/info', current: true },
-  { name: 'Pesquisa', href: '/app/pesquisa', current: false },
-  { name: 'Store', href: '/app/store', current: false },
+    { name: 'Dashboard', href: '/app/dashboard', current: false },
+    { name: 'Information', href: '/app/info', current: true },
+    { name: 'Pesquisa', href: '/app/pesquisa', current: false },
+    { name: 'Store', href: '/app/store', current: false },
+  
 ]
 const userNavigation = [
   { name: 'Your Profile', href: '#' },
@@ -107,7 +109,7 @@ export default function Navbar({children}) {
                                 {userNavigation.map((item) => (
                                 <Menu.Item key={item.name}>
                                     {({ active }) => (
-                                    <a
+                                    <Link
                                         href={item.href}
                                         className={classNames(
                                         active ? 'bg-gray-100' : '',
@@ -115,7 +117,7 @@ export default function Navbar({children}) {
                                         )}
                                     >
                                         {item.name}
-                                    </a>
+                                    </Link>
                                     )}
                                 </Menu.Item>
                                 ))}
