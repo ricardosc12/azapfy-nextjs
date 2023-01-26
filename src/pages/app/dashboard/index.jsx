@@ -1,6 +1,7 @@
 import Chart from "@/components/molecules/Chart"
 import Widget from "@/components/molecules/Widget"
 import { server } from "@/config"
+import { useEffect } from "react"
 import useSWR from 'swr'
 
 const fetcher = async ([url,data]) => await fetch(url,{
@@ -13,12 +14,11 @@ const useDash = () => {
         widgets: data?.widgets,
         charts: data?.charts
     }
-
 }
 
 export default function Dash(){
 
-    const { widgets, charts } = useDash([`${server}/api/dashboard`], fetcher)
+    const { widgets, charts } = useDash()
 
     return (
         <div>

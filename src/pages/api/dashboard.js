@@ -3,7 +3,7 @@ function delay(time=2000) {
 }
 
 export default async function handler(req, res) {
-    await delay()
+    await delay(200)
     
     const charts = [
         {
