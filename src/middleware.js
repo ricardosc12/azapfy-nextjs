@@ -1,17 +1,18 @@
-// import { NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
+import { routes } from '@/routes'
 
-// This function can be marked `async` if using `await` inside
 export function middleware(request) {
-
-    // if(request.nextUrl.pathname == "/"){
-    //     return NextResponse.redirect(new URL('/login', request.url))
-    // }
-    // if(request.nextUrl.pathname != "/login" && !request.nextUrl.pathname.includes(".")){
-    //     return NextResponse.redirect(new URL('/login', request.url))
-    // }
+	if(!routes.includes(request.nextUrl.pathname)) {
+		const url = request.nextUrl.clone()
+		url.pathname = '/login'
+		return NextResponse.redirect(url)
+	}
 }
 
-// See "Matching Paths" below to learn more
-// export const config = {
-//     matcher: '/',
-// }
+
+
+export const config = {
+	matcher: [
+	  `/((?!api|_next/static|_next/image|favicon.ico).*)`,
+	],
+  }

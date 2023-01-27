@@ -27,7 +27,7 @@ const features = [
   },
 ]
 
-export default function Dashboard() {
+export default function Info() {
   return (
     <div className="bg-white py-24 sm:py-32 lg:py-40">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -61,4 +61,4 @@ export default function Dashboard() {
 }
 
 
-Dashboard.nav = true
+Info.nav = true
