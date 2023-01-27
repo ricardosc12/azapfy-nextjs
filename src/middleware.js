@@ -5,7 +5,7 @@ export async function middleware(request) {
 	let logged = request.cookies.get('_logged')?.value
 	if(!routes.includes(request.nextUrl.pathname) || logged!=='1') {
 		const url = request.nextUrl.clone()
-		url.pathname = '/login'
+		url.pathname = logged=='1'?'/app/dashboard':'/login'
 		return NextResponse.redirect(url)
 	}
 }
