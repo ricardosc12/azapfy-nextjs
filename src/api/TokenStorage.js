@@ -17,7 +17,7 @@ class TokenStorage {
     static clearToken() {
         localStorage.removeItem("access_token");
         localStorage.removeItem("refresh_token");
-        document.cookie = "_logged=; max-age=0"
+        document.cookie = "_logged=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
     }
 
 }
