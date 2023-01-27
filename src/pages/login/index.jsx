@@ -1,11 +1,31 @@
 import { useRouter } from 'next/router'
 import Icon from "@pub/favicon.ico"
 import Image from 'next/image'
+import { signIn } from '@/api/Auth'
+import timezone from '@/utils/timezone'
 
 import { LockClosedIcon } from '@heroicons/react/20/solid'
 
 export default function Login() {
     const router = useRouter()
+
+    const handleSign=async()=>{
+        const email = document.getElementById('email').value
+        const pass = document.getElementById("password").value
+        
+        const requestData = {
+            usuario: email,
+            senha: pass,
+            timezone: timezone()
+        }
+
+        const response = await signIn(requestData)
+        
+        if(response.status===200 && response.data?.status) {
+            router.push("/app/info")
+        }
+    }
+
     return (
         <>
         <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -36,7 +56,7 @@ export default function Login() {
                     Email address
                     </label>
                     <input
-                    id="email-address"
+                    id="email"
                     name="email"
                     type="email"
                     autoComplete="email"
@@ -83,7 +103,7 @@ export default function Login() {
 
                 <div>
                 <button
-                    onClick={()=>router.push("/app/info")}
+                    onClick={handleSign}
                     className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                 >
                     <span className="absolute inset-y-0 left-0 flex items-center pl-3">

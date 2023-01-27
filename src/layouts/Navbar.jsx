@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Icon from "@pub/favicon.ico"
+import { signOut } from '@/api/Auth'
 
 const user = {
   name: 'Tom Cook',
@@ -80,6 +81,10 @@ export default function Navbar({children}) {
                     </div>
                     <div className="hidden md:block">
                         <div className="ml-4 flex items-center md:ml-6">
+                        <button className='bg-white' onClick={()=>{
+                            signOut()
+                            router.push('/login')
+                        }}>SAIR</button>
                         <button
                             type="button"
                             className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -157,6 +162,7 @@ export default function Navbar({children}) {
                         </Disclosure.Button>
                     ))}
                     </div>
+     
                     <div className="border-t border-gray-700 pt-4 pb-3">
                     <div className="flex items-center px-5">
                         <div className="flex-shrink-0">
@@ -176,14 +182,14 @@ export default function Navbar({children}) {
                     </div>
                     <div className="mt-3 space-y-1 px-2">
                         {userNavigation.map((item) => (
-                        <Disclosure.Button
+                        <Link
                             key={item.name}
                             as="a"
                             href={item.href}
                             className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
                         >
                             {item.name}
-                        </Disclosure.Button>
+                        </Link>
                         ))}
                     </div>
                     </div>
