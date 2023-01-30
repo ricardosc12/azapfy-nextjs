@@ -3,6 +3,7 @@ import { devtools, persist } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
 import { mergeDeepLeft } from "ramda";
 import  secureLocalStorage  from  "react-secure-storage";
+import { isDev } from '@/config';
 
 import createAuth from './Auth';
 import createLogo from './Logo';
@@ -12,15 +13,13 @@ const store = (set) => ({
     logo: createLogo(set)
 });
 
-const useStore = create(
-    devtools(
-      persist(immer(store), {
-        name: "storage",
-        getStorage: () => secureLocalStorage,
-        merge: (persistedState, currentState) =>
-          mergeDeepLeft(persistedState, currentState)
-      })
-    )
-  );
+const config=()=>persist(immer(store), {
+  name: "storage",
+  getStorage: () => secureLocalStorage,
+  merge: (persistedState, currentState) =>
+    mergeDeepLeft(persistedState, currentState)
+})
+
+const useStore = isDev?create(devtools(config())):create(config());
 
 export default useStore

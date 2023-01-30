@@ -44,9 +44,9 @@ export default function Info() {
 
   return (
     <div className="bg-white py-24 sm:py-32 lg:py-40">
-      <button onClick={()=>{setAuth(true)}}>ON</button>
-      ascasc
-      <button onClick={()=>{setAuth(false)}}>FALSE</button>
+      <button onClick={()=>{setAuth(true)}}>setON</button>
+      <div>{logged?.ricardo?'ON':'FALSE'}</div>
+      <button onClick={()=>{setAuth(false)}}>setFALSE</button>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="sm:text-center">
           <h2 className="text-lg font-semibold leading-8 text-indigo-600">Transactions</h2>
