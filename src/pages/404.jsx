@@ -6,5 +6,5 @@ export default function _404 (){
     useEffect(()=>{
         router.push('/login')
     },[])
-    return
+    return <></>
 }
