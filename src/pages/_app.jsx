@@ -17,9 +17,8 @@ export default function App({ Component, pageProps }) {
 				/>
 			</Head>
 			{Component.nav===true?
-			(
+			(	
 				<Navbar><Component {...pageProps} /></Navbar>
-				
 			):<Component {...pageProps} />}
 			
 		</>

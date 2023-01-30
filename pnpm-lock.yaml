@@ -18,10 +18,14 @@ specifiers:
   change-case: ^4.1.2
   eslint: 8.32.0
   eslint-config-next: 13.1.5
+  immer: ^9.0.19
   next: 13.1.5
+  node-json-db: ^2.1.4
   postcss: ^8.4.21
+  ramda: ^0.28.0
   react: 18.2.0
   react-dom: 18.2.0
+  react-secure-storage: ^1.0.22
   swr: ^2.0.2
   tailwindcss: ^3.2.4
   zustand: ^4.3.2
@@ -42,11 +46,15 @@ dependencies:
   change-case: 4.1.2
   eslint: 8.32.0
   eslint-config-next: 13.1.5_eslint@8.32.0
+  immer: 9.0.19
   next: 13.1.5_biqbaboplfbrettd7655fr4n2y
+  node-json-db: 2.1.4
+  ramda: 0.28.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-secure-storage: 1.0.22
   swr: 2.0.2_react@18.2.0
-  zustand: 4.3.2_react@18.2.0
+  zustand: 4.3.2_immer@9.0.19+react@18.2.0
 
 devDependencies:
   '@next/bundle-analyzer': 13.1.5
@@ -786,6 +794,10 @@ packages:
       path-key: 3.1.1
       shebang-command: 2.0.0
       which: 2.0.2
+    dev: false
+
+  /crypto-js/4.1.1:
+    resolution: {integrity: sha512-o2JlM7ydqd3Qk9CA0L4NL6mTzU2sdx96a+oOfPu8Mkl/PK51vSyoi8/rQ8NknZtk44vq15lmhAj9CIAGwgeWKw==}
     dev: false
 
   /cssesc/3.0.0:
@@ -1587,6 +1599,10 @@ packages:
     engines: {node: '>= 4'}
     dev: false
 
+  /immer/9.0.19:
+    resolution: {integrity: sha512-eY+Y0qcsB4TZKwgQzLaE/lqYMlKhv5J9dyd2RhhtGhNo2njPXDqU9XPfcNfa3MIDsdtZt5KlkIsirlo4dHsWdQ==}
+    dev: false
+
   /import-fresh/3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
     engines: {node: '>=6'}
@@ -1934,6 +1950,10 @@ packages:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
     dev: false
 
+  /murmurhash-js/1.0.0:
+    resolution: {integrity: sha512-TvmkNhkv8yct0SVBSy+o8wYzXjE4Zz3PCesbfs8HiCXXdcTuocApFv11UWlNFWKYsP2okqrhb7JNlSm9InBhIw==}
+    dev: false
+
   /nanoid/3.3.4:
     resolution: {integrity: sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -1992,6 +2012,12 @@ packages:
     dependencies:
       lower-case: 2.0.2
       tslib: 2.4.1
+    dev: false
+
+  /node-json-db/2.1.4:
+    resolution: {integrity: sha512-gLPX6scW/vaVPcf+y6gMWZaSAJeNPe1LeuHQVkDfEZDcO4b/Z2yh6lVh6SXheGKz9WfGDVCtgTrfF8h4C8s7kA==}
+    dependencies:
+      rwlock: 5.0.0
     dev: false
 
   /node-releases/2.0.8:
@@ -2296,6 +2322,10 @@ packages:
     resolution: {integrity: sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==}
     engines: {node: '>=10'}
 
+  /ramda/0.28.0:
+    resolution: {integrity: sha512-9QnLuG/kPVgWvMQ4aODhsBUFKOUmnbUnsSXACv+NCQZcHbeb+v8Lodp8OVxtRULN1/xOyYLLaL6npE6dMq5QTA==}
+    dev: false
+
   /react-dom/18.2.0_react@18.2.0:
     resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
     peerDependencies:
@@ -2308,6 +2338,13 @@ packages:
 
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
+    dev: false
+
+  /react-secure-storage/1.0.22:
+    resolution: {integrity: sha512-/Cc1uPynXMG1rdjRSNg6nSCDz2RYGIkFab0axUiZ4ne3ZrtGWBbRNJ9474oLI+MTFj9LupN9832j0rV9kr8D+A==}
+    dependencies:
+      crypto-js: 4.1.1
+      murmurhash-js: 1.0.0
     dev: false
 
   /react/18.2.0:
@@ -2383,6 +2420,10 @@ packages:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
     dependencies:
       queue-microtask: 1.2.3
+
+  /rwlock/5.0.0:
+    resolution: {integrity: sha512-XgzRqLMfCcm9QfZuPav9cV3Xin5TRcIlp4X/SH3CvB+x5D2AakdlEepfJKDd8ByncvfpcxNWdRZVUl38PS6ZJg==}
+    dev: false
 
   /safe-regex-test/1.0.0:
     resolution: {integrity: sha512-JBUUzyOgEwXQY1NuPtvcj/qcBDbDmEvWufhlnXZIm75DEHp+afM1r1ujJpJsV/gSM4t59tpDyPi1sd6ZaPFfsA==}
@@ -2819,7 +2860,7 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /zustand/4.3.2_react@18.2.0:
+  /zustand/4.3.2_immer@9.0.19+react@18.2.0:
     resolution: {integrity: sha512-rd4haDmlwMTVWVqwvgy00ny8rtti/klRoZjFbL/MAcDnmD5qSw/RZc+Vddstdv90M5Lv6RPgWvm1Hivyn0QgJw==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
@@ -2831,6 +2872,7 @@ packages:
       react:
         optional: true
     dependencies:
+      immer: 9.0.19
       react: 18.2.0
       use-sync-external-store: 1.2.0_react@18.2.0
     dev: false

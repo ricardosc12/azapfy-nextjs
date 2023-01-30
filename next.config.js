@@ -4,5 +4,8 @@ const nextConfig = {
   images: {
     domains: ['tailwindui.com','images.unsplash.com'],
   },
+  env: {
+    SECURE_LOCAL_STORAGE_PREFIX: '%'
+  }
 }
 module.exports = nextConfig
