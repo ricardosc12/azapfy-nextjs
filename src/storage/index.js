@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { devtools, persist } from "zustand/middleware";
+import { devtools, persist, createJSONStorage } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
 import { mergeDeepLeft } from "ramda";
 import  secureLocalStorage  from  "react-secure-storage";
@@ -15,8 +15,8 @@ const store = (set) => ({
 });
 
 const config=()=>persist(immer(store), {
-  name: "storage",
-  getStorage: () => secureLocalStorage,
+  name: "token",
+  storage: createJSONStorage(() => secureLocalStorage),
   merge: (persistedState, currentState) =>
     mergeDeepLeft(persistedState, currentState)
 })

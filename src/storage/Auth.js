@@ -2,9 +2,8 @@
 
 //auth
 const createAuth = (set) => ({
-    logged:{},
-    setAuth: (status=true) => set(state=>{
-        state.auth.logged = {ricardo:status}
+    setAuth: (payload) => set(state=>{
+        state.auth = {...state.auth, ...payload}
     })
 })
 

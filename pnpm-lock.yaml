@@ -16,6 +16,7 @@ specifiers:
   autoprefixer: ^10.4.13
   axios: ^1.2.5
   change-case: ^4.1.2
+  crypto-js: ^4.1.1
   eslint: 8.32.0
   eslint-config-next: 13.1.5
   immer: ^9.0.19
@@ -44,6 +45,7 @@ dependencies:
   apisauce: 2.1.6
   axios: 1.2.5
   change-case: 4.1.2
+  crypto-js: 4.1.1
   eslint: 8.32.0
   eslint-config-next: 13.1.5_eslint@8.32.0
   immer: 9.0.19
