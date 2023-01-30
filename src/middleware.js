@@ -8,6 +8,7 @@ export async function middleware(request) {
 		url.pathname = logged=='1'?'/app/dashboard':'/login'
 		return NextResponse.redirect(url)
 	}
+	return NextResponse.next()
 }
 
 
