@@ -17,7 +17,7 @@ export default function Navbar({children}) {
             <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
 				<div>
 					{Object.entries(routes).map(([url,{title}])=>{
-						return <p><Link href={url}>{title}</Link></p>
+						return <p key={url}><Link href={url}>{title}</Link></p>
 					})}
 				</div>
                 {children}
