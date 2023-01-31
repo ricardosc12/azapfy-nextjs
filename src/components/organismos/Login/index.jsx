@@ -28,7 +28,7 @@ export default function Login() {
 
         const {status, mensagem} = createDataUser(response,setAuth)
 
-        router.push("/app/info")
+        // router.push("/app/info")
     }
 
     return (

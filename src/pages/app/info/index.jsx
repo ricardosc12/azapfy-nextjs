@@ -28,18 +28,15 @@ const features = [
 ]
 
 import useStore from '@/storage'
-import { useEffect } from 'react'
-import CryptoJS from 'crypto-js'
+import React, { useEffect } from 'react'
 import { getModules } from '@/utils/auth'
+import CookieStorage from '@/utils/CookieStorage'
 
 export default function Info() {
 
   	const { auth } = useStore(state=>state)
 
 	useEffect(()=>{
-    // if(logged?.ricardo){
-    //   setAuth(false)
-    // }
 		console.log(auth)
 	},[auth])
 
@@ -52,13 +49,13 @@ export default function Info() {
 		// console.log("ENCODE: ",encrypted)
 
 		// console.log("DECODE: ",decrypted.toString(CryptoJS.enc.Utf8))
-
-		// var encrypted = CryptoJS.AES.encrypt(getModules(auth).toString(), "6c35aebeff1d62a35881af369772237b").toString();
-		// var decrypted = CryptoJS.AES.decrypt(encrypted, "6c35aebeff1d62a35881af369772237b");
-
+		console.time("modules")
+		CookieStorage.setModules(getModules(auth).toString())
+		console.log(CookieStorage.getModules())
+		console.timeEnd("modules")
 
 	}
-
+	
 
 	return (
 		<div className="bg-white py-24 sm:py-32 lg:py-40">

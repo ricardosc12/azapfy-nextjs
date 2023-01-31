@@ -1,6 +1,8 @@
 import { getKey, toArray } from "@/utils/object"
 import { load } from "@/api/Auth"
 import timezone from "@/utils/timezone"
+import { getModules } from "@/utils/auth"
+import CookieStorage from "@/utils/CookieStorage"
 
 
 export default async function createDataUser(response, setAuth){
@@ -16,6 +18,8 @@ export default async function createDataUser(response, setAuth){
         const {usuario, grupos} = data
 
         let activeGroup = getKey(grupos)
+
+        CookieStorage.setModules(getModules(activeGroup.data, true).toString())
 
         if (usuario.super_user) {
             const requestData = {

@@ -37,29 +37,46 @@ export function getBases(auth, { active = false, name = false } = {}) {
         .map((base) => (name === true ? base.name : base));
 }
 
-export function getModules(auth){
-    const bases = getGroup(auth)?.bases
-    const activeBases = getBases(auth,{active:true}).map(bases=>bases.sigla)
-
-    if(!bases || isEmpty(bases)) return []
+export function getModules(auth,login=false){
 
     const modules = {}
 
-    try {
-        activeBases.forEach(sigla => {
+    if(login) {
+        if(isEmpty(auth.bases)) return []
+        
+        Object.values(auth.bases).forEach(base => {
             try {
-                const base = bases[sigla]
                 if(!isEmpty(base.modulos)) {
                     Object.entries(base.modulos).forEach(([name, {ativo}]) => {
                         if(ativo) modules[name] = name
                     });
                 }   
             }catch (erro) {console.error("erro ao adicionar módulo da base: "+sigla,erro)}
-        });        
+        });   
     }
-    
-    catch (erro) {
-        console.error("erro ao adicionar módulos: ",erro)
+
+    else {
+        const bases = getGroup(auth)?.bases
+        const activeBases = getBases(auth,{active:true}).map(bases=>bases.sigla)
+
+        if(!bases || isEmpty(bases)) return []
+
+        try {
+            activeBases.forEach(sigla => {
+                try {
+                    const base = bases[sigla]
+                    if(!isEmpty(base.modulos)) {
+                        Object.entries(base.modulos).forEach(([name, {ativo}]) => {
+                            if(ativo) modules[name] = name
+                        });
+                    }   
+                }catch (erro) {console.error("erro ao adicionar módulo da base: "+sigla,erro)}
+            });        
+        }
+        
+        catch (erro) {
+            console.error("erro ao adicionar módulos: ",erro)
+        }
     }
 
     return Object.values(modules)
