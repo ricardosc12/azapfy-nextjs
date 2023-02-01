@@ -8,7 +8,7 @@ export const routes = {
         title: 'Info'
     },
     '/app/store':{
-        name:'azp',
+        name:'cte',
         title: 'Store'
     },
     '/app/pesquisa':{

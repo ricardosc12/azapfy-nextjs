@@ -139,7 +139,7 @@ const Navbar = React.memo(() => {
             <Disclosure.Panel className="sm:hidden">
                 <div className="space-y-1 px-2 pt-2 pb-3">
                 {navigation.map((item) => (
-                    <Disclosure.Button
+                    <Link
                     key={item.name}
                     as="a"
                     href={item.to}
@@ -150,7 +150,7 @@ const Navbar = React.memo(() => {
                     aria-current={item.current ? 'page' : undefined}
                     >
                     {item.name}
-                    </Disclosure.Button>
+                    </Link>
                 ))}
                 </div>
             </Disclosure.Panel>
