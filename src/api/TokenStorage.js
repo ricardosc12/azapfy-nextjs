@@ -18,6 +18,7 @@ class TokenStorage {
         localStorage.removeItem("access_token");
         localStorage.removeItem("refresh_token");
         document.cookie = "_logged=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
+        document.cookie = "_module=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
     }
 
 }

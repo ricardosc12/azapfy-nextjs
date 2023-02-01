@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
-import Framer from '@/layouts/Framer';
+import Framer from '@/components/layouts/Framer';
 
 const Info =  dynamic(() => import('@/components/organismos/App/Info'), {
     suspense: true,

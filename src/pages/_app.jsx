@@ -1,6 +1,6 @@
 import '@/styles/globals.css'
 import '@coreui/coreui/dist/css/coreui.min.css'
-import Layout from '@/layouts/layout'
+import Layout from '@/components/layouts/layout'
 import Head from 'next/head'
 import { AnimatePresence } from "framer-motion"
 
