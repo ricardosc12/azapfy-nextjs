@@ -36,31 +36,8 @@ export default function Info() {
 
   	const { auth } = useStore(state=>state)
 
-	useEffect(()=>{
-		console.log(auth)
-	},[auth])
-
-	async function encrypt(e){
-		// const text = document.getElementById('text').value
-
-		// var encrypted = CryptoJS.AES.encrypt(text, "6c35aebeff1d62a35881af369772237b").toString();
-		// var decrypted = CryptoJS.AES.decrypt(encrypted, "6c35aebeff1d62a35881af369772237b");
-
-		// console.log("ENCODE: ",encrypted)
-
-		// console.log("DECODE: ",decrypted.toString(CryptoJS.enc.Utf8))
-		console.time("modules")
-		CookieStorage.setModules(getModules(auth).toString())
-		console.log(CookieStorage.getModules())
-		console.timeEnd("modules")
-
-	}
-	
-
 	return (
 		<div className="bg-white py-24 sm:py-32 lg:py-40">
-		<input type="text" id='text'/>
-		<button onClick={encrypt}>EnCrypt</button>
 		<div className="mx-auto max-w-7xl px-6 lg:px-8">
 			<div className="sm:text-center">
 			<h2 className="text-lg font-semibold leading-8 text-indigo-600">Transactions</h2>

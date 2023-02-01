@@ -3,6 +3,7 @@ const nextConfig = {
   reactStrictMode: false,
   images: {
     domains: ['tailwindui.com','images.unsplash.com'],
+    dangerouslyAllowSVG: true,
   },
   env: {
     SECURE_LOCAL_STORAGE_PREFIX: '%',
