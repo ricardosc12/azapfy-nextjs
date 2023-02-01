@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
+import Framer from '@/layouts/Framer';
 
 const Dashboard =  dynamic(() => import('@/components/organismos/App/Dashboard'), {
     suspense: true,
@@ -8,7 +9,7 @@ const Dashboard =  dynamic(() => import('@/components/organismos/App/Dashboard')
 export default function Page() {
     return (
         <Suspense fallback={<div>Loading...</div>}>
-            <Dashboard />
+            <Framer><Dashboard/></Framer>
         </Suspense>
     )
 }

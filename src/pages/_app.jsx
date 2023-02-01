@@ -1,7 +1,8 @@
 import '@/styles/globals.css'
 import '@coreui/coreui/dist/css/coreui.min.css'
-import Navbar from '@/layouts/Navbar'
+import Layout from '@/layouts/layout'
 import Head from 'next/head'
+import { AnimatePresence } from "framer-motion"
 
 export default function App({ Component, pageProps }) {  
 
@@ -12,13 +13,15 @@ export default function App({ Component, pageProps }) {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<meta name="theme-color" content="#000000" />
 				<meta
-				name="description"
-				content="Web site created using NextJS"
+					name="description"
+					content="Web site created using NextJS"
 				/>
 			</Head>
 			{Component.nav===true?
 			(	
-				<Navbar><Component {...pageProps} /></Navbar>
+				<Layout>
+					<Component {...pageProps} />
+				</Layout>
 			):<Component {...pageProps} />}
 			
 		</>

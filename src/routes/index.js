@@ -12,7 +12,7 @@ export const routes = {
         title: 'Store'
     },
     '/app/pesquisa':{
-        name:'cte',
+        name:'azp',
         title: 'Pesquisa'
     },
     '/login':{

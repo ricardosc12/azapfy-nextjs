@@ -27,6 +27,7 @@
     "crypto-js": "^4.1.1",
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.5",
+    "framer-motion": "^9.0.0",
     "immer": "^9.0.19",
     "next": "13.1.5",
     "node-json-db": "^2.1.4",
